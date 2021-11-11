@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./SignUpStyles.css";
 import axios from "axios";
-import { FaFacebookF } from "react-icons/fa";
-import { FaGooglePlusG } from "react-icons/fa";
-import { RiLinkedinFill } from "react-icons/ri";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import GoogleIcon from "@mui/icons-material/Google";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+// import { FaFacebookF } from "react-icons/fa";
+// import { FaGooglePlusG } from "react-icons/fa";
+// import { RiLinkedinFill } from "react-icons/ri";
 
 function LoginFormPostRequest(props) {
   const [state, setState] = useState({
@@ -36,21 +39,21 @@ function LoginFormPostRequest(props) {
     <div>
       <div className="form-container sign-in-container">
         <form onSubmit={handleSubmit}>
-          <h1>Sign in</h1>
+          <h1 style={{ color: "#5bc0aa" }}>Sign in</h1>
           <div className="social-container">
             <a href="#7" className="social">
               <i className="fab fa-facebook-f">
-                <FaFacebookF style={{ fontSize: "20px" }} />
+                <FacebookIcon />
               </i>
             </a>
             <a href="#7" className="social">
               <i className="fab fa-google-plus-g">
-                <FaGooglePlusG style={{ fontSize: "22px" }} />
+                <GoogleIcon />
               </i>
             </a>
             <a href="#7" className="social">
               <i className="fab fa-linkedin-in">
-                <RiLinkedinFill style={{ fontSize: "22px" }} />
+                <LinkedInIcon />
               </i>
             </a>
           </div>
