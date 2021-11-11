@@ -160,6 +160,8 @@ input {
 }
 
 .overlay {
+  /* background: url("../src/images/burger.jpg"); */
+
   background: #5bc0aa;
   background: -webkit-linear-gradient(to right, #5bc0aa, #5bc0aa);
   background: linear-gradient(to right, #5bc0aa, #5bc0aa);
