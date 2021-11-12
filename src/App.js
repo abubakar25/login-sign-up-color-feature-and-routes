@@ -8,27 +8,24 @@ import LoginFormPostRequest from "./LoginFormPostRequest";
 import LoginRedirect from "./LoginRedirect";
 import SignUpRedirect from "./SignUpRedirect";
 
-function App() {
+function App(props) {
   return (
     <div>
       {/* <PostDataForm /> */}
-      <SignUpFormPostRequest />
-      {/* <Router>
+      {/* <SignUpFormPostRequest /> */}
+      <Router>
         <Switch>
-          <Route path="/login">
-            <LoginFormPostRequest />
-          </Route>
-          <Route path="/signupRedirect">
-            <SignUpRedirect />
-          </Route>
-          <Route path="/loginRedirect">
+          <Route exact path="/login">
             <LoginRedirect />
+          </Route>
+          <Route exact path="/signup">
+            <SignUpRedirect />
           </Route>
           <Route path="/">
             <SignUpFormPostRequest />
           </Route>
         </Switch>
-      </Router> */}
+      </Router>
     </div>
   );
 }

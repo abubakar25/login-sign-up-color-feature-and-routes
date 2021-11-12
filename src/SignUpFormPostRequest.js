@@ -5,13 +5,20 @@ import axios from "axios";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+} from "react-router-dom";
 import burger from "../src/images/burger.jpg";
 // import { FaFacebookF } from "react-icons/fa";
 // import { FaGooglePlusG } from "react-icons/fa";
 // import { RiLinkedinFill } from "react-icons/ri";
 
 function PostDataForm(props) {
+  const history = useHistory();
   const [state, setState] = useState({
     name: "",
     email: "",
@@ -45,21 +52,23 @@ function PostDataForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    history.push("/signup");
 
     const { name, email, password } = state;
 
-    const signUp = {
+    const signUpValues = {
       name,
       email,
       password,
     };
 
     axios
-      .post("http://localhost:3001/SignUpFormPostRequestFunction", signUp)
+      .post("http://localhost:3001/SignUpFormPostRequestFunction", signUpValues)
       .then(() => console.log("Sign Up"))
       .catch((err) => {
         console.error(err);
       });
+    console.log(signUpValues);
   };
 
   return (
